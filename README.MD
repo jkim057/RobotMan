@@ -5,6 +5,8 @@
 1. Guessing game where users have to guess a word one letter at a time. Users get 10 chances, each incorrect letter revealing a robot piece or a figure of a man.
 
 
+## Resources:
+1. Letter display setup source: `https://matthewjamestaylor.com/css-centred-menus#`
 ## Technology Used
 1. HTML, CSS, Javascript
 
