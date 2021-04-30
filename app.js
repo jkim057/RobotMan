@@ -2,7 +2,7 @@
 
 // for each string of 5 or less letters, a certain amount of spacing and space 
 // every 5 more letters will increase the space taken and REDUCE the borderspacing before and after the word.
-// words to guess can be invisible, and and once guessed correctly will turn visible.
+// words to guess can be invisible, and and once guessed correctly will turn visible. (Maybe?)
 
 const subBtn = document.querySelector("#bars")
 const inputBar = document.querySelector("#text")
@@ -11,6 +11,10 @@ const inputBar = document.querySelector("#text")
 function stringBreak(str){
     return str.split("") 
 }
+
+// if true, createElement li with letter input under the images
+// if false, have an element listener that will have one of the images show up
+
 
 subBtn.addEventListener("click", event => {
     event.preventDefault()
