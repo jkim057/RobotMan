@@ -12,8 +12,15 @@
     // 2. REDUCE the borderspacing before and after the word.
 // words to guess can be invisible, and and once guessed correctly will turn visible. (Maybe?)
 
+/// Li.innerText lines have beem moved //////
+  // check if the input value exists on the preset guess words ✅
+        // save words as a string in an array
+        // word strings need to be broken up into strings of individual letters ✅
+    // function to break up strings individually needs to be reuseable if we are going to let players enter in words to guess. ✅
+    // create li item & use innerText to put in letter value ✅
+///////////////////////////
 
-// if true, createElement li with letter input under the images
+// if true, createElement li w letter input under images ✅
 // if false, have an element listener that will have one of the images show up
 
 ////////// Variables ////////// 
@@ -24,7 +31,7 @@ const inputBar = document.querySelector("#text")
 const worrrds = ["words"]
 const wordsWordsWords = ["panda","focus","hocus","prime","limbs","tears","clubs","weeps","kekwU","moots"]
 
-
+const lettersUl = document.querySelector('#container')
 
 //////////  Functions ////////// 
 // look ma i figured out how to write a anonymous function that doens't break or make me cry ✅
@@ -44,36 +51,17 @@ wordArray = stringBreak(wordsWordsWords[Math.floor(Math.random() * wordsWordsWor
 
 
 
-/// MOVE THIS SOMEWHERE ELSE -- but needs to live in a function //////
-
-  // check if the input value exists on the preset guess words ✅
-        // save words as a string in an array
-                // word strings need to be broken up into strings of individual letters ✅
-                // function to break up strings individually needs to be reuseable if we are going to let players enter in words to guess. ✅
-    // create li item & use innerText to put in letter value ✅
-    const lettersUl = document.querySelector('#container')
-    const lettersLi = document.createElement("li")
-    lettersLi = lettersLi.innerText("why")
-    lettersUl.appendChild(lettersLi)
-
-///////////////////////////
-
-
-
-
-
-
-
 
 //////////  Event Listener ////////// 
 
 subBtn.addEventListener("click", (event) => {
     event.preventDefault()
         if(wordArray.includes(inputBar.value)){
-            console.log("return reveal a letter")
-            console.log(inputBar.value)
-            console.log(wordArray)
+            const lettersLi = document.createElement("li")
+            lettersLi.innerText = inputBar.value
+            lettersUl.appendChild(lettersLi)
             return
+            // this just sticks the letter at the end, it doesn't put the letters in the correct place.
         }else{
             console.log("you are wrong son")
             console.log(inputBar.value)
