@@ -6,7 +6,8 @@
 
 
 ## Resources:
-1. Letter display setup source: `https://matthewjamestaylor.com/css-centred-menus#`
+1. Visibility Issues Resolved: https://stackoverflow.com/questions/6205148/changing-visibility-using-javascript 
+
 ## Technology Used
 1. HTML, CSS, Javascript
 
@@ -15,6 +16,7 @@
 
 ## Project Setup
 1. None (at this time)
+
 ## Future Plans
 1. None (at this time)
 
