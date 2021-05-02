@@ -41,13 +41,15 @@ const lettersShow = document.querySelector('.display')
 // 3. combo str break & i break into 1 variable function 
 const indexRandom = () => {return Math.floor(Math.random() * chosenWord.length)}
 const stringBreak = (str) => {return str.split("") }
+
 wordArray = stringBreak(chosenWord[Math.floor(Math.random() * chosenWord.length)])
 
 const setUpWords = () => {
     for (let i = 0; i < wordArray.length; i++) {
         const lettersSpan = document.createElement("span")
         const letterStyle = document.createElement("div")
-        lettersSpan.id = ('trueLetter')
+        lettersSpan.classList.add('trueLetter')
+        lettersSpan.id = (`letterPosition${i}`)
         letterStyle.classList.add('bottomStyle')
         lettersSpan.innerText = wordArray[i]
         lettersShow.appendChild(letterStyle)
@@ -56,33 +58,44 @@ const setUpWords = () => {
     }
 }
 setUpWords()
-
-
-// ///////// keep for later use somewhere? ////////////
-// const lettersLi = document.createElement("li")
-// lettersLi.innerText = inputBar.value
-// lettersUl.appendChild(lettersLi)
-// return
-// // just adds letters at end, needs correct placement
+    
 
 
 
 
 
+const letterFind = function(){
+    for (let i = 0; i < wordArray.length; i++) {
+        if (wordArray[i].includes(inputBar.value)){
+            let reveal = document.querySelector(`#letterPosition${i}`)
+            reveal.style.visibility = "visible";
+    }
 
+    }
+}
+
+
+// to every item in the array that means the requirements, 
+// add toggle class
+
+// if doesn't match, do nothing.
 
 //////////  Event Listener ////////// 
 
 subBtn.addEventListener("click", (event) => {
     event.preventDefault()
         if(wordArray.includes(inputBar.value)){
-            // the guess word needs to be set up invisible on the display line
-            // if the guessed letter matches, all spaces containing that word HAS to show up.
-            return
+            console.log(wordArray)
+            // step 1. need to find the specific wordArray item 
+            // step 2. need to add this toggle class to that item
+            // step 3. hope to god that this toggle class will make this show up
+            letterFind()
+
+
+            // return
     
         }else{
             console.log("you are wrong son")
-            console.log(inputBar.value)
             console.log(wordArray)
         }
 
