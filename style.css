@@ -66,6 +66,7 @@
 
 }
 .wrapper ul{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     clear: left;
     float: left;
     list-style: none;
@@ -74,9 +75,11 @@
     position: relative;
     left: 50%;
     text-align:center;
+    display: block;
 }
 .wrapper ul li{
-    display: block;
+  
+    /* visibility: hidden; */
     margin: 0 0 0 3px;
     padding: 3px 10px;
     text-decoration: none;
@@ -87,8 +90,13 @@
     border-bottom: 4px solid black;
 }
 
-ul {
+/* ul {
     display: inline-block;
+} */
+
+.trueLetter li{
+    visibility: hidden;
+
 }
 
 

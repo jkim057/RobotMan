@@ -31,7 +31,7 @@ const inputBar = document.querySelector("#text")
 const worrrds = ["words"]
 const wordsWordsWords = ["panda","focus","hocus","prime","limbs","tears","clubs","weeps","kekwU","moots"]
 
-const lettersUl = document.querySelector('#container')
+const lettersUl = document.querySelector('.container')
 
 //////////  Functions ////////// 
 // look ma i figured out how to write a anonymous function that doens't break or make me cry ✅
@@ -39,14 +39,35 @@ const lettersUl = document.querySelector('#container')
 
 // 1. generates random number limited to the length of the guess word
 // 2. breaks up string into array of strings
-// 3. combo string break and index break into one variable function I can use
+// 3. combo str break & i break into 1 variable function 
 const indexRandom = () => {return Math.floor(Math.random() * wordsWordsWords.length)}
 const stringBreak = (str) => {return str.split("") }
 wordArray = stringBreak(wordsWordsWords[Math.floor(Math.random() * wordsWordsWords.length)])
 
+const setUpWords = () => {
+    for (let i = 0; i < wordArray.length; i++) {
+        const lettersLi = document.createElement("li")
+        lettersLi.classList.add('trueLetter')
+        lettersLi.innerText = wordArray[i]
+        lettersUl.appendChild(lettersLi)
+        
+    }
+
+}
+setUpWords()
 
 // I can grab random words by their index # && break up the string into an sub array 
 // console.log(stringBreak(wordsWordsWords[Math.floor(Math.random() * wordsWordsWords.length)])
+
+
+// ///////// keep for later use somewhere? ////////////
+// const lettersLi = document.createElement("li")
+// lettersLi.innerText = inputBar.value
+// lettersUl.appendChild(lettersLi)
+// return
+// // just adds letters at end, needs correct placement
+
+
 
 
 
@@ -57,11 +78,10 @@ wordArray = stringBreak(wordsWordsWords[Math.floor(Math.random() * wordsWordsWor
 subBtn.addEventListener("click", (event) => {
     event.preventDefault()
         if(wordArray.includes(inputBar.value)){
-            const lettersLi = document.createElement("li")
-            lettersLi.innerText = inputBar.value
-            lettersUl.appendChild(lettersLi)
+            // the guess word needs to be set up invisible on the display line
+            // if the guessed letter matches, all spaces containing that word HAS to show up.
             return
-            // this just sticks the letter at the end, it doesn't put the letters in the correct place.
+    
         }else{
             console.log("you are wrong son")
             console.log(inputBar.value)
