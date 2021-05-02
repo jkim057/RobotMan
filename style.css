@@ -57,41 +57,31 @@
 }
 
 
-
-
-.wrapper{
-    float: left;
-    width: 100%;
-    position:relative;
+.display{
+    display: flex;
+    justify-content: space-evenly;
 
 }
-.wrapper ul{
-    clear: left;
-    float: left;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+
+.bottomStyle{
+    flex-direction: row;
+    margin: 0 0 0 3px; 
+    padding: 3px 5px;
     position: relative;
-    left: 50%;
-    text-align:center;
-}
-.wrapper ul li{
-    display: block;
-    margin: 0 0 0 3px;
-    padding: 3px 10px;
-    text-decoration: none;
-    line-height: 1.3em;
-    float: left;
-    position: relative;
-    left: -50%;
     border-bottom: 4px solid black;
 }
 
-ul {
-    display: inline-block;
+.trueLetter{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    visibility: hidden;
+    
 }
 
+.show{
+    display: block;
+}
 
 form{
-    margin-left: 450px
+    margin-left: 50%;
+    padding: 5px;
 }
