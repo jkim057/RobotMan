@@ -48,7 +48,7 @@ const setUpWords = () => {
         const lettersSpan = document.createElement("span")
         const letterStyle = document.createElement("div")
         lettersSpan.id = ('trueLetter')
-        letterStyle.id = ('bottomStyle')
+        letterStyle.classList.add('bottomStyle')
         lettersSpan.innerText = wordArray[i]
         lettersShow.appendChild(letterStyle)
         letterStyle.appendChild(lettersSpan)  
