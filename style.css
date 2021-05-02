@@ -95,21 +95,25 @@
 
 
 .display{
-    width: 100%;
-
-}
-
-.container div{
-    display: block;
+    display: flex;
+    justify-content: space-evenly;
     margin: 0 0 0 3px; 
     padding: 3px 10px;
+}
+
+#bottomStyle{
+    flex-direction: row;
+    margin: 0 0 0 3px; 
+    padding: 3px 5px;
     position: relative;
     border-bottom: 4px solid black;
 }
 
-.trueLetter span{
+#trueLetter{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: blue;
+
+    display: hidden;
+    
 }
 
 form{
