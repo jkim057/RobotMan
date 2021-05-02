@@ -28,10 +28,9 @@
 const subBtn = document.querySelector("#bars")
 const inputBar = document.querySelector("#text")
 
-const worrrds = ["words"]
-const wordsWordsWords = ["panda","focus","hocus","prime","limbs","tears","clubs","weeps","kekwU","moots"]
+const chosenWord = ["panda","focus","hocus","prime","limbs","tears","clubs","weeps","kekwU","boots"]
 
-const lettersUl = document.querySelector('.container')
+const lettersShow = document.querySelector('.display')
 
 //////////  Functions ////////// 
 // look ma i figured out how to write a anonymous function that doens't break or make me cry ✅
@@ -40,24 +39,23 @@ const lettersUl = document.querySelector('.container')
 // 1. generates random number limited to the length of the guess word
 // 2. breaks up string into array of strings
 // 3. combo str break & i break into 1 variable function 
-const indexRandom = () => {return Math.floor(Math.random() * wordsWordsWords.length)}
+const indexRandom = () => {return Math.floor(Math.random() * chosenWord.length)}
 const stringBreak = (str) => {return str.split("") }
-wordArray = stringBreak(wordsWordsWords[Math.floor(Math.random() * wordsWordsWords.length)])
+wordArray = stringBreak(chosenWord[Math.floor(Math.random() * chosenWord.length)])
 
 const setUpWords = () => {
     for (let i = 0; i < wordArray.length; i++) {
-        const lettersLi = document.createElement("li")
-        lettersLi.classList.add('trueLetter')
-        lettersLi.innerText = wordArray[i]
-        lettersUl.appendChild(lettersLi)
-        
-    }
+        const lettersSpan = document.createElement("span")
+        const letterStyle = document.createElement("div")
+        lettersSpan.classList.add('trueLetter')
+        letterStyle.classList.add('container')
+        lettersSpan.innerText = wordArray[i]
+        lettersShow.appendChild(letterStyle)
+        letterStyle.appendChild(lettersSpan)  
 
+    }
 }
 setUpWords()
-
-// I can grab random words by their index # && break up the string into an sub array 
-// console.log(stringBreak(wordsWordsWords[Math.floor(Math.random() * wordsWordsWords.length)])
 
 
 // ///////// keep for later use somewhere? ////////////

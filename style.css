@@ -59,13 +59,10 @@
 
 
 
-.wrapper{
-    float: left;
+/* .wrapper{
     width: 100%;
-    position:relative;
-
 }
-.wrapper ul{
+.wrapper div{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     clear: left;
     float: left;
@@ -74,12 +71,10 @@
     padding: 0;
     position: relative;
     left: 50%;
-    text-align:center;
+    text-align: center;
     display: block;
 }
-.wrapper ul li{
-  
-    /* visibility: hidden; */
+.container span{
     margin: 0 0 0 3px;
     padding: 3px 10px;
     text-decoration: none;
@@ -90,16 +85,34 @@
     border-bottom: 4px solid black;
 }
 
-/* ul {
-    display: inline-block;
+.trueLetter span{
+        content-visibility: hidden;
 } */
 
-.trueLetter li{
-    visibility: hidden;
+
+
+/* Switched out the LI for span in the JS, and tried to simplify the styling so that each span lives into a div that has styling so the style is seperate from the letters */
+
+
+.display{
+    width: 100%;
 
 }
 
+.container div{
+    display: block;
+    margin: 0 0 0 3px; 
+    padding: 3px 10px;
+    position: relative;
+    border-bottom: 4px solid black;
+}
+
+.trueLetter span{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: blue;
+}
 
 form{
-    margin-left: 450px
+    margin-left: 50%;
+    padding: 5px;
 }
