@@ -42,19 +42,7 @@
     visibility: hidden;
     
 }
-#face{
-    height: 30px;
-    width: 30px;
-    border: 1px solid black;
-    visibility: hidden;
-}
-#chest{
-    height: 30px;
-    width: 30px;
-    border: 1px solid black;
-    visibility: hidden;
-}
-#feet{
+#science{
     height: 30px;
     width: 30px;
     border: 1px solid black;
