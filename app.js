@@ -50,8 +50,8 @@
 // not certain as of right now.
 
 
-// PROJECT HW:
-// set up picture 
+
+
 ////////// Variables ////////// 
 
 const subBtn = document.querySelector("#bars")
