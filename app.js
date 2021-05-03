@@ -1,44 +1,72 @@
 // Notes:
 
-// Letter LI setup goals/plans:
+// Letter setup goals/plans:
     // 1. break up string into arrays ✅
     // 2. create list items dynamically ✅
     // 3. div spots per string item ✅
-    // border on bottom of div to make the letters presentable (CSS) ✅
-        // A. for each string of 5 or less letters, a certain amount of spacing has to be setup in front and behind of the letters.
-        // Status: this has been roughly done :check:
-// every additional 5 letters (tiers):
-    // 1. increase the total space taken up &
-    // 2. REDUCE the borderspacing before and after the word.
-// words to guess can be invisible, and and once guessed correctly will turn visible. (Maybe?)
+    // 4. border on div bottom to make placeholder (CSS) ✅
+        // OPTIONAL: 
+        // A. the front and back of strings need spacing (center?)
+        // B. set up Tiers for every 5 letters
+            // 1. increase the total space taken up &
+            // 2. REDUCE borderspacing before and after letters.
+    // letters to guess should be invisible, & when guessed correctly will turn visible. ✅ ABSOLUTELY CHECK
 
-/// Li.innerText lines have beem moved //////
-  // check if the input value exists on the preset guess words ✅
-        // save words as a string in an array
-        // word strings need to be broken up into strings of individual letters ✅
-    // function to break up strings individually needs to be reuseable if we are going to let players enter in words to guess. ✅
-    // create li item & use innerText to put in letter value ✅
+    // 5. check if the input value exists on the preset guess words ✅
+        // A. save words as a string in an array ✅
+        // B. need to break up word string into string letters ✅
+    // OPTIONAL: function to break up strings need to be reuseable ✅
+    // 6. create letter item & use innerText to put in letter value ✅
 ///////////////////////////
 
 // if true, createElement li w letter input under images ✅
-// if false, have an element listener that will have one of the images show up
+// if false, make one of the images show up instead
+
+// functions:
+    // Note: look ma i figured out how to write a anonymous function that doesn't break or make me cry ✅
+    // () => Math.floor(Math.random() * wordsWordsWords.length);
+
+    // 1. generate random # limited to the length of the guess word ✅
+    // 2. breaks up string into array of strings ✅
+    // 3. combo str break & i break into 1 variable function ✅
+        // OPTIONAL: need to setup event listener for this function on a opening page for when players want to enter in words 
+
+
+// Chances & image reveal:
+    // 1. need to find element with class of chance, but WITHOUT class of skip this.
+    // 2. also need to make it so that the Shinji div DOES NOT get picked the first time around
+    // 3. also need to make it so that the man chances can be flipped back to invisible when shinji shows up
+        // NOTES : if (imageReveal.classList.includes('skipThis')){
+            // imageReveal.style.visibility = "visible"
+            // imageReveal.classList.add(`skipThis${i}`)}
+    //:fire: I was about to make myself cry in stress when someone (Aaron) pointed out instead of trying to set up a query selector to try to grab things by class `.chance`, I could just target them by their ids that I built into them FROM THE VERY START.
+
+// reducing the number of chances for the sake of my sanity
+// 2 arms for 1 chance, 2 legs for 1 chance, entire man for 1 chance.
 
 ////////// Variables ////////// 
 
 const subBtn = document.querySelector("#bars")
 const inputBar = document.querySelector("#text")
 
-const chosenWord = ["panda","focus","hocus","prime","limbs","tears","clubs","weeps","kekwU","boots"]
+const chosenWord = ["panda","focus","hocus","prime","limbs","tears","clubs","weeps","kiwis","boots"]
 
 const lettersShow = document.querySelector('.display')
 
-//////////  Functions ////////// 
-// look ma i figured out how to write a anonymous function that doens't break or make me cry ✅
-//  () => Math.floor(Math.random() * wordsWordsWords.length);
+const robotHead = document.querySelector(`#head`)
+const robotShinji = document.querySelector(`#shinji`)
+const robotTorso = document.querySelector(`#torso`)
+const robotArmLE = document.querySelector(`#leftArm`)
+const robotArmRI = document.querySelector(`#rightArm`)
+const robotLegsLE = document.querySelector(`#leftLeg`)
+const robotLegsRI = document.querySelector(`#rightLeg`)
+const sciWhole = document.querySelector(`#science`)
 
-// 1. generates random number limited to the length of the guess word
-// 2. breaks up string into array of strings
-// 3. combo str break & i break into 1 variable function 
+
+
+
+//////////  Functions ////////// 
+
 const indexRandom = () => {return Math.floor(Math.random() * chosenWord.length)}
 const stringBreak = (str) => {return str.split("") }
 
@@ -54,51 +82,62 @@ const setUpWords = () => {
         lettersSpan.innerText = wordArray[i]
         lettersShow.appendChild(letterStyle)
         letterStyle.appendChild(lettersSpan)  
-
     }
 }
+// need to get setUpWords to run automatically 
 setUpWords()
-    
 
 
-
-
+// Resolved letter visibility issues this thread https://stackoverflow.com/questions/6205148/changing-visibility-using-javascript 
 
 const letterFind = function(){
     for (let i = 0; i < wordArray.length; i++) {
         if (wordArray[i].includes(inputBar.value)){
             let reveal = document.querySelector(`#letterPosition${i}`)
             reveal.style.visibility = "visible";
-    }
+}}}
 
+let chancesLeft = 6
+
+const letterMiss = function(){
+    // let imageReveal = document.querySelector(".chance");
+    // console.log(imageReveal)
+    // head torso arm leg man pilot
+    if(chancesLeft == 6){
+        robotLegsLE.style.visibility = "visible"
+        robotLegsRI.style.visibility = "visible"
+        return chancesLeft--
+    }else if(chancesLeft == 5) {
+        robotTorso.style.visibility = "visible"
+        return chancesLeft--
+    }else if(chancesLeft == 4) {
+        robotArmLE.style.visibility = "visible"
+        robotArmRI.style.visibility = "visible"
+        return chancesLeft--
+    }else if(chancesLeft == 3) {
+        robotHead.style.visibility = "visible"
+        return chancesLeft--
+    }else if(chancesLeft == 2) {
+        sciWhole.style.visibility = "visible"
+        return chancesLeft--
+    } else if(chancesLeft == 1) {
+        sciWhole.style.visibility = "hidden"
+        robotShinji.style.visibility = "visible"
+        return chancesLeft--
     }
 }
-
-
-// to every item in the array that means the requirements, 
-// add toggle class
-
-// if doesn't match, do nothing.
 
 //////////  Event Listener ////////// 
 
 subBtn.addEventListener("click", (event) => {
     event.preventDefault()
         if(wordArray.includes(inputBar.value)){
-            console.log(wordArray)
-            // step 1. need to find the specific wordArray item 
-            // step 2. need to add this toggle class to that item
-            // step 3. hope to god that this toggle class will make this show up
             letterFind()
-
-
-            // return
-    
         }else{
+            letterMiss()
             console.log("you are wrong son")
             console.log(wordArray)
         }
-
 });
 
 
