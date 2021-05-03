@@ -44,6 +44,14 @@
 // reducing the number of chances for the sake of my sanity
 // 2 arms for 1 chance, 2 legs for 1 chance, entire man for 1 chance.
 
+
+//finished MVP with chances left(bronze) robot part 
+// maybe get that word input to set up so players can enter words to guess
+// not certain as of right now.
+
+
+// PROJECT HW:
+// set up picture 
 ////////// Variables ////////// 
 
 const subBtn = document.querySelector("#bars")
