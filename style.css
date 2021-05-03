@@ -1,49 +1,91 @@
-/* chances CSS*/
+/* Chances CSS*/
+/*  used for grid information. https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
 
 #mainRobot{
-    /* display: flex; */
+
     display: grid;
-    align-items: center;
-    flex-direction: column;
+    grid-template-rows: 100px 100px 50px 50px 100px;
+    grid-template-columns: 50px 50px 50px 50px 50px 50px ;
+
 
 }
 #head{
-    height: 50px;
-    width: 50px;
+    grid-column: 3;
+    grid-row: 1;
+    height: 100px;
+    width: 100px;
     border: 1px solid black;
     visibility: hidden;
+    display: grid;
+    grid-template-rows: 25px 25px 25px 25px;
 }
 #shinji{
-    height: 20px;
-    width: 20px;
+    grid-column: 2;
+    height: 50px;
+    width: 50px;
     border: 1px solid black;
     visibility: hidden;
 }
 #torso{
-    height: 50px;
-    width: 50px;
+    grid-column: 3;
+    grid-row: 2;
+    height: 150px;
+    width: 100px;
     align-items: baseline;
     border: 1px solid black;
     visibility: hidden;
 }
 .legs{
-    height: 50px;
-    width: 40px;
+    height: 150px;
+    width: 50px;
     border: 1px solid black;
     visibility: hidden;
 }
+#leftLeg{
+    grid-column: 4;
+    grid-row: 4;
+}
+#rightLeg{
+    grid-column: 3;
+    grid-row: 4;
+}
+
 .arms{
-    height: 40px;
-    width: 60px;
+    height: 100px;
+    width: 50px;
     border: 1px solid black;
     visibility: hidden;
 }
 #leftArm{
-    float: left;
+    grid-column: 2;
+    grid-row: 2;
 }
 #rightArm{
-    float: right;
+    grid-column: 5;
+    grid-row: 2;
 }
+
+.hands{
+    border: 1px solid black;
+    visibility: hidden;
+}
+
+#leftHand{
+    height: 100px;
+    width: 50px;
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#rightHand{
+    height: 100px;
+    width: 100px;
+    grid-column: 5;
+    grid-row: 3;
+}
+
+
+
 
 #mainMan{
     display: flex;
@@ -53,7 +95,7 @@
     
 }
 #science{
-    height: 30px;
+    height: 50px;
     width: 30px;
     border: 1px solid black;
     visibility: hidden;

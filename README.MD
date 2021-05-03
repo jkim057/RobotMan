@@ -36,17 +36,13 @@ https://jkim057.github.io/RobotMan/
 1. Could not get the letters to turn invisible while keeping letter styling displays visible. Edit: Was an issue with CSS formatting, has been resolved.✅
 1. Could not get chance figures to show up after each failed guess attempt. Edit: Was an issue with overly broad query selectors, has been resolved.✅
 1. Could not get chance remaining to display after each failed guess attempt. Edit: Was an issue with  CSS formatting, has been resolved.✅
-1. Could not get chance figured positioned properly.
+1. Could not get chance figured positioned properly. Edit: Learned about grid in CSS formatting, has been resolved.✅
 
 
 ## Resources:
 1. Used for intial styling: https://matthewjamestaylor.com/css-centred-menus#
 1. Visibility Issues Resolved: https://stackoverflow.com/questions/6205148/changing-visibility-using-javascript 
-
-## Special Thanks
-1. Friends and family.
-1. The wonderful intructors and cohortmates at GA
-1. Bo and Aaron for saving my sanity for pointing out common sense solutions for my overly complicated plans.
+1. Used for position styling: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/
 
 
 ## Future Plans
@@ -70,4 +66,9 @@ https://jkim057.github.io/RobotMan/
 1. Time based scoring.
 1. High score tracker.
 
-## Support
+
+
+## Special Thanks
+1. Friends and family.
+1. The wonderful intructors and cohortmates at GA
+1. Bo and Aaron for saving my sanity for pointing out common sense solutions for my overly complicated plans.

@@ -45,10 +45,22 @@
 // 2 arms for 1 chance, 2 legs for 1 chance, entire man for 1 chance.
 
 
-//finished MVP with chances left(bronze) robot part 
-// maybe get that word input to set up so players can enter words to guess
-// not certain as of right now.
+//////////////
+//// start screen reasoning w/ 1 vs 2 player setup ///
 
+// with start screen, set up so that player can choose 1player or 2player
+// picking 1 player, page auto generates a word to guess
+    // have those functions linked to the 1st player button
+            // auto grab word from pool & setup as array SET TO 1 PLAYER BUTTON CLICK
+// pick 2 players, prompt shows up asking for word
+    // page doesn't load yet?
+    // prompted word gets prioritized over general pool
+    // prompted word gets spilt into single letter arrays
+    // page THEN sets the word to guess
+    // then game starts
+    // prioritized entered word should then get broken down into array of single letter strings, and the game be the same from there.
+
+////////////////////
 
 
 
@@ -64,9 +76,11 @@ const lettersShow = document.querySelector('.display')
 const robotHead = document.querySelector(`#head`)
 const robotShinji = document.querySelector(`#shinji`)
 const robotTorso = document.querySelector(`#torso`)
-const robotArmLE = document.querySelector(`#leftArm`)
+const robotArmLT = document.querySelector(`#leftArm`)
 const robotArmRI = document.querySelector(`#rightArm`)
-const robotLegsLE = document.querySelector(`#leftLeg`)
+const robotHandLT = document.querySelector(`#leftHand`)
+const robotHandRI = document.querySelector(`#rightHand`)
+const robotLegsLT = document.querySelector(`#leftLeg`)
 const robotLegsRI = document.querySelector(`#rightLeg`)
 const sciWhole = document.querySelector(`#science`)
 
@@ -75,7 +89,14 @@ let chancesLeft = 6
 const chanceDisplay = document.querySelector('.lifeChance')
 
 
+
+
+
+
+
+
 //////////  Functions ////////// 
+
 
 const indexRandom = () => {return Math.floor(Math.random() * chosenWord.length)}
 const stringBreak = (str) => {return str.split("") }
@@ -120,7 +141,7 @@ const letterMiss = function(){
     // console.log(imageReveal)
     // head torso arm leg man pilot
     if(chancesLeft == 6){
-        robotLegsLE.style.visibility = "visible"
+        robotLegsLT.style.visibility = "visible"
         robotLegsRI.style.visibility = "visible"
         chanceTally()
         return chancesLeft--
@@ -129,8 +150,10 @@ const letterMiss = function(){
         chanceTally()
         return chancesLeft--
     }else if(chancesLeft == 4) {
-        robotArmLE.style.visibility = "visible"
+        robotArmLT.style.visibility = "visible"
         robotArmRI.style.visibility = "visible"
+        robotHandLT.style.visibility = "visible"
+        robotHandRI.style.visibility = "visible"
         chanceTally()
         return chancesLeft--
     }else if(chancesLeft == 3) {
@@ -150,6 +173,27 @@ const letterMiss = function(){
         chanceTally()
     }
 }
+//// start screen reasoning ///
+
+// with start screen, set up so that player can choose 1player or 2player
+// picking 1 player, page auto generates a word to guess
+    // have those functions linked to the 1st player button
+            // auto grab word from pool & setup as array SET TO 1 PLAYER BUTTON CLICK
+// pick 2 players, prompt shows up asking for word
+    // page doesn't load yet?
+    // prompted word gets prioritized over general pool
+    // prompted word gets spilt into single letter arrays
+    // page THEN sets the word to guess
+    // then game starts
+    // prioritized entered word should then get broken down into array of single letter strings, and the game be the same from there.
+
+
+// const startScreen = function(){
+
+// }
+
+
+
 
 
 
