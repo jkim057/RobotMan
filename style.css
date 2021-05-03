@@ -1,67 +1,78 @@
-
+/* chances CSS*/
 
 #mainRobot{
     display: flex;
     align-items: center;
     flex-direction: column;
 }
-
 #head{
     height: 50px;
     width: 50px;
     border: 1px solid black;
-}
-#torso{
-    height: 50px;
-    width: 50px;
-    border: 1px solid black;
-}
-.legs{
-    height: 50px;
-    width: 40px;
-    border: 1px solid black;
-}
-.arms{
-    height: 40px;
-    width: 60px;
-    border: 1px solid black;
+    visibility: hidden;
 }
 #shinji{
     height: 20px;
     width: 20px;
     border: 1px solid black;
+    visibility: hidden;
 }
-
+#torso{
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    visibility: hidden;
+}
+.legs{
+    height: 50px;
+    width: 40px;
+    border: 1px solid black;
+    visibility: hidden;
+}
+.arms{
+    height: 40px;
+    width: 60px;
+    border: 1px solid black;
+    visibility: hidden;
+}
 #mainMan{
     display: flex;
     align-items: center;
     flex-direction: column;
-
+    visibility: hidden;
     
 }
 #face{
     height: 30px;
     width: 30px;
     border: 1px solid black;
+    visibility: hidden;
 }
 #chest{
     height: 30px;
     width: 30px;
     border: 1px solid black;
+    visibility: hidden;
 }
 #feet{
     height: 30px;
     width: 30px;
     border: 1px solid black;
+    visibility: hidden;
 }
 
+
+
+
+/* display CSS */
+/* Used some styling and advice from 
+https://matthewjamestaylor.com/css-centred-menus# */
 
 .display{
     display: flex;
     justify-content: space-evenly;
 
 }
-
 .bottomStyle{
     flex-direction: row;
     margin: 0 0 0 3px; 
@@ -69,11 +80,9 @@
     position: relative;
     border-bottom: 4px solid black;
 }
-
 .trueLetter{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     visibility: hidden;
-    
 }
 
 .show{

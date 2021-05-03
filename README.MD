@@ -6,6 +6,7 @@
 
 
 ## Resources:
+1. Used for intial styling: https://matthewjamestaylor.com/css-centred-menus#
 1. Visibility Issues Resolved: https://stackoverflow.com/questions/6205148/changing-visibility-using-javascript 
 
 ## Technology Used
@@ -16,6 +17,12 @@
 
 ## Project Setup
 1. None (at this time)
+
+## Special Thanks
+1. The wonderful intructors and cohortmates at GA
+1. Friends and family.
+1. Aaron for saving my sanity for pointing out common sense solutions for my overly complicated plans.
+
 
 ## Future Plans
 1. None (at this time)

@@ -32,17 +32,38 @@
         // OPTIONAL: need to setup event listener for this function on a opening page for when players want to enter in words 
 
 
+// Chances & image reveal:
+    // 1. need to find element with class of chance, but WITHOUT class of skip this.
+    // 2. also need to make it so that the Shinji div DOES NOT get picked the first time around
+    // 3. also need to make it so that the man chances can be flipped back to invisible when shinji shows up
+        // NOTES : if (imageReveal.classList.includes('skipThis')){
+            // imageReveal.style.visibility = "visible"
+            // imageReveal.classList.add(`skipThis${i}`)}
+    //:fire: I was about to make myself cry in stress when someone (Aaron) pointed out instead of trying to set up a query selector to try to grab things by class `.chance`, I could just target them by their ids that I built into them FROM THE VERY START.
 
-
+// reducing the number of chances for the sake of my sanity
+// 2 arms for 1 chance, 2 legs for 1 chance, entire man for 1 chance.
 
 ////////// Variables ////////// 
 
 const subBtn = document.querySelector("#bars")
 const inputBar = document.querySelector("#text")
 
-const chosenWord = ["panda","focus","hocus","prime","limbs","tears","clubs","weeps","kekwU","boots"]
+const chosenWord = ["panda","focus","hocus","prime","limbs","tears","clubs","weeps","kiwis","boots"]
 
 const lettersShow = document.querySelector('.display')
+
+const robotHead = document.querySelector(`#head`)
+const robotShinji = document.querySelector(`#shinji`)
+const robotTorso = document.querySelector(`#torso`)
+const robotArmLE = document.querySelector(`#leftArm`)
+const robotArmRI = document.querySelector(`#rightArm`)
+const robotLegsLE = document.querySelector(`#leftLeg`)
+const robotLegsRI = document.querySelector(`#rightLeg`)
+const sciWhole = document.querySelector(`#science`)
+
+
+
 
 //////////  Functions ////////// 
 
@@ -66,12 +87,45 @@ const setUpWords = () => {
 // need to get setUpWords to run automatically 
 setUpWords()
 
+
+// Resolved letter visibility issues this thread https://stackoverflow.com/questions/6205148/changing-visibility-using-javascript 
+
 const letterFind = function(){
     for (let i = 0; i < wordArray.length; i++) {
         if (wordArray[i].includes(inputBar.value)){
             let reveal = document.querySelector(`#letterPosition${i}`)
             reveal.style.visibility = "visible";
 }}}
+
+let chancesLeft = 6
+
+const letterMiss = function(){
+    // let imageReveal = document.querySelector(".chance");
+    // console.log(imageReveal)
+    // head torso arm leg man pilot
+    if(chancesLeft == 6){
+        robotLegsLE.style.visibility = "visible"
+        robotLegsRI.style.visibility = "visible"
+        return chancesLeft--
+    }else if(chancesLeft == 5) {
+        robotTorso.style.visibility = "visible"
+        return chancesLeft--
+    }else if(chancesLeft == 4) {
+        robotArmLE.style.visibility = "visible"
+        robotArmRI.style.visibility = "visible"
+        return chancesLeft--
+    }else if(chancesLeft == 3) {
+        robotHead.style.visibility = "visible"
+        return chancesLeft--
+    }else if(chancesLeft == 2) {
+        sciWhole.style.visibility = "visible"
+        return chancesLeft--
+    } else if(chancesLeft == 1) {
+        sciWhole.style.visibility = "hidden"
+        robotShinji.style.visibility = "visible"
+        return chancesLeft--
+    }
+}
 
 //////////  Event Listener ////////// 
 
@@ -80,6 +134,7 @@ subBtn.addEventListener("click", (event) => {
         if(wordArray.includes(inputBar.value)){
             letterFind()
         }else{
+            letterMiss()
             console.log("you are wrong son")
             console.log(wordArray)
         }
