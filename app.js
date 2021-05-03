@@ -62,7 +62,9 @@ const robotLegsLE = document.querySelector(`#leftLeg`)
 const robotLegsRI = document.querySelector(`#rightLeg`)
 const sciWhole = document.querySelector(`#science`)
 
+let chancesLeft = 6
 
+const chanceDisplay = document.querySelector('.lifeChance')
 
 
 //////////  Functions ////////// 
@@ -97,7 +99,13 @@ const letterFind = function(){
             reveal.style.visibility = "visible";
 }}}
 
-let chancesLeft = 6
+const chanceTally = function(){
+    if(chancesLeft > 0){
+        chanceDisplay.innerText = `${chancesLeft} chances left!`
+    }else if(chancesLeft <= 0){
+        chanceDisplay.innerText = `You lost! City is destroyed.`
+    }
+}
 
 const letterMiss = function(){
     // let imageReveal = document.querySelector(".chance");
@@ -106,26 +114,39 @@ const letterMiss = function(){
     if(chancesLeft == 6){
         robotLegsLE.style.visibility = "visible"
         robotLegsRI.style.visibility = "visible"
+        chanceTally()
         return chancesLeft--
     }else if(chancesLeft == 5) {
         robotTorso.style.visibility = "visible"
+        chanceTally()
         return chancesLeft--
     }else if(chancesLeft == 4) {
         robotArmLE.style.visibility = "visible"
         robotArmRI.style.visibility = "visible"
+        chanceTally()
         return chancesLeft--
     }else if(chancesLeft == 3) {
         robotHead.style.visibility = "visible"
+        chanceTally()
         return chancesLeft--
     }else if(chancesLeft == 2) {
         sciWhole.style.visibility = "visible"
+        chanceTally()
         return chancesLeft--
-    } else if(chancesLeft == 1) {
+    }else if(chancesLeft == 1) {
         sciWhole.style.visibility = "hidden"
         robotShinji.style.visibility = "visible"
+        chanceTally()
         return chancesLeft--
+    }else{
+        chanceTally()
     }
 }
+
+
+
+
+
 
 //////////  Event Listener ////////// 
 

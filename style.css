@@ -1,9 +1,11 @@
 /* chances CSS*/
 
 #mainRobot{
-    display: flex;
+    /* display: flex; */
+    display: grid;
     align-items: center;
     flex-direction: column;
+
 }
 #head{
     height: 50px;
@@ -20,6 +22,7 @@
 #torso{
     height: 50px;
     width: 50px;
+    align-items: baseline;
     border: 1px solid black;
     visibility: hidden;
 }
@@ -35,6 +38,13 @@
     border: 1px solid black;
     visibility: hidden;
 }
+#leftArm{
+    float: left;
+}
+#rightArm{
+    float: right;
+}
+
 #mainMan{
     display: flex;
     align-items: center;
@@ -80,4 +90,13 @@ https://matthewjamestaylor.com/css-centred-menus# */
 form{
     margin-left: 50%;
     padding: 5px;
+}
+
+
+p.lifeChance{
+    padding: 2px;
+    float: right;
+    height: 40px;
+    width: 100px;
+    border: 2px solid black;
 }
