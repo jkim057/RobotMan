@@ -37,6 +37,11 @@ https://jkim057.github.io/RobotMan/
 1. Could not get chance figures to show up after each failed guess attempt. Edit: Was an issue with overly broad query selectors, has been resolved.✅
 1. Could not get chance remaining to display after each failed guess attempt. Edit: Was an issue with  CSS formatting, has been resolved.✅
 1. Could not get chance figured positioned properly. Edit: Learned about grid in CSS formatting, has been resolved.✅
+1. Images are not stretching out to fill out entire space properly.
+1. Can't get the robot head to fill out space.
+1. Can't get pilot head to set inside properly.
+
+Setup basic chance images to show
 
 
 ## Resources:

@@ -1,3 +1,8 @@
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto 0; 
+}
+
 /* Chances CSS*/
 /*  used for grid information. https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
 
@@ -53,7 +58,7 @@
 
 .arms{
     height: 100px;
-    width: 100px;
+    width: 175px;
     border: 1px solid black;
     visibility: hidden;
 }
@@ -98,12 +103,14 @@
     
 }
 #science{
-    height: 50px;
-    width: 30px;
+    height: 100px;
+    width: 70px;
     border: 1px solid black;
     visibility: hidden;
 }
 
+
+/* Not sure how to get images to stretch out to entire page */
 
 
 /* CS IMG Styling */
@@ -146,6 +153,11 @@
     max-height: 100%;  
 }
 #headIMG{
+    max-width: 100%;
+    max-height: 100%;  
+}
+
+#sciManIMG{
     max-width: 100%;
     max-height: 100%;  
 }
