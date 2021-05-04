@@ -33,15 +33,16 @@ https://jkim057.github.io/RobotMan/
 <!-- Your User stories – who are your users, what do they want and why? -->
 
 ## Major Hurdles/ Unresolved Issues
-1. Could not get the letters to turn invisible while keeping letter styling displays visible. Edit: Was an issue with CSS formatting, has been resolved.✅
-1. Could not get chance figures to show up after each failed guess attempt. Edit: Was an issue with overly broad query selectors, has been resolved.✅
-1. Could not get chance remaining to display after each failed guess attempt. Edit: Was an issue with  CSS formatting, has been resolved.✅
-1. Could not get chance figured positioned properly. Edit: Learned about grid in CSS formatting, has been resolved.✅
-1. Images are not stretching out to fill out entire space properly.
-1. Can't get the robot head to fill out space.
-1. Can't get pilot head to set inside properly.
+1. Could not get the letters to turn invisible while keeping letter styling displays visible. ✅ Edit: Was an issue with CSS formatting, has been resolved.
+1. Could not get chance figures to show up after each failed guess attempt. ✅ Edit: Was an issue with overly broad query selectors, has been resolved.
+1. Could not get chance remaining to display after each failed guess attempt. ✅ Edit: Was an issue with  CSS formatting, has been resolved.
+1. Could not get chance figured positioned properly. ✅ Edit: Learned about grid in CSS formatting, has been resolved.
+1. Have issue with Cross-Origin Read Blocking (CORB) blocking my image sources. Found work around, but not truly satisfied with it. ✅ Edit: Just put images in folder directly 
+1. Images are not stretching out to fill out entire space properly. ✅ Edit: Jen helped my brain grow a little today by pointing out I restricted my images from making up more space by using max-width/max-height instead of regular width/height
+1. A. Can't get the robot head to fill out space.  ✅ Edit: See above for Jen's fix.
+1. Can't get pilot head to set inside properly. ❌ EDIT: Saw what it looked like visually, decided to work around this by replacing head img w/ floating pilot face with head img with pilot inside already
 
-Setup basic chance images to show
+
 
 
 ## Resources:
@@ -60,7 +61,7 @@ Setup basic chance images to show
 ### Bronze
 1. Chances left countdown : ✅
 1. Create input so players can enter words to guess.
-1. Update chance figures with actual artwork.
+1. Update chance figures with actual artwork.✅
 ### Silver
 1. Background of town.
 1. Animation or visual effect accomplaying chance figure appearance.
