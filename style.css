@@ -18,17 +18,21 @@ h1{
     width: 100px;
     border: 1px solid black;
     visibility: hidden;
-    display: grid;
-    grid-template-rows: 25px 25px 25px 25px;
-    z-index: 2;
+    position: relative;
 }
 #shinji{
-    grid-column: 2;
-    height: 50px;
-    width: 50px;
+    grid-column: 3;
+    grid-row: 1;
     border: 1px solid black;
     visibility: hidden;
-    z-index: 5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #torso{
@@ -116,50 +120,50 @@ h1{
 /* CS IMG Styling */
 
 #shinjiIMG{
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 #torsoIMG{
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 #leftArmIMG{
     float:right;
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
 }
 #leftHandIMG{
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
 }
 #rightArmIMG{
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
     transform: scaleX(-1);
 }
 
 #rightHandIMG{
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
 }
 #leftLegIMG{
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
 }
 #rightLegIMG{
-    max-width: 100%;
-    max-height: 100%;  
+    width: 100%;
+    height: 100%;  
 }
 #headIMG{
-    max-width: 100%;
-    max-height: 100%;  
+    width: 100%;
+    height: 100%;  
 }
 
 #sciManIMG{
-    max-width: 100%;
-    max-height: 100%;  
+    width: 100%;
+    height: 100%;  
 }
 
 
