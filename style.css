@@ -1,48 +1,98 @@
-/* chances CSS*/
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto 0; 
+}
+
+/* Chances CSS*/
+/*  used for grid information. https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
 
 #mainRobot{
-    /* display: flex; */
     display: grid;
-    align-items: center;
-    flex-direction: column;
-
+    grid-template-rows: 100px 100px 50px 50px 100px;
+    grid-template-columns: 50px 50px 50px 50px 50px 50px ;
 }
 #head{
-    height: 50px;
-    width: 50px;
+    grid-column: 3;
+    grid-row: 1;
+    height: 100px;
+    width: 100px;
     border: 1px solid black;
     visibility: hidden;
+    display: grid;
+    grid-template-rows: 25px 25px 25px 25px;
+    z-index: 2;
 }
 #shinji{
-    height: 20px;
-    width: 20px;
-    border: 1px solid black;
-    visibility: hidden;
-}
-#torso{
+    grid-column: 2;
     height: 50px;
     width: 50px;
+    border: 1px solid black;
+    visibility: hidden;
+    z-index: 5;
+}
+
+#torso{
+    grid-column: 3;
+    grid-row: 2;
+    height: 150px;
+    width: 100px;
     align-items: baseline;
     border: 1px solid black;
     visibility: hidden;
 }
+
 .legs{
-    height: 50px;
-    width: 40px;
+    height: 150px;
+    width: 50px;
     border: 1px solid black;
     visibility: hidden;
 }
+#leftLeg{
+    grid-column: 4;
+    grid-row: 4;
+}
+#rightLeg{
+    grid-column: 3;
+    grid-row: 4;
+}
+
 .arms{
-    height: 40px;
-    width: 60px;
+    height: 100px;
+    width: 175px;
     border: 1px solid black;
     visibility: hidden;
 }
 #leftArm{
-    float: left;
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
 }
+
 #rightArm{
-    float: right;
+    grid-column: 5;
+    grid-row: 2;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.hands{
+    border: 1px solid black;
+    visibility: hidden;
+}
+
+#leftHand{
+    height: 100px;
+    width: 50px;
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#rightHand{
+    height: 100px;
+    width: 50px;
+    grid-column: 5;
+    grid-row: 3;
 }
 
 #mainMan{
@@ -53,13 +103,64 @@
     
 }
 #science{
-    height: 30px;
-    width: 30px;
+    height: 100px;
+    width: 70px;
     border: 1px solid black;
     visibility: hidden;
 }
 
 
+/* Not sure how to get images to stretch out to entire page */
+
+
+/* CS IMG Styling */
+
+#shinjiIMG{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#torsoIMG{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#leftArmIMG{
+    float:right;
+    max-width: 100%;
+    max-height: 100%;
+}
+#leftHandIMG{
+    max-width: 100%;
+    max-height: 100%;
+}
+#rightArmIMG{
+    max-width: 100%;
+    max-height: 100%;
+    transform: scaleX(-1);
+}
+
+#rightHandIMG{
+    max-width: 100%;
+    max-height: 100%;
+}
+#leftLegIMG{
+    max-width: 100%;
+    max-height: 100%;
+}
+#rightLegIMG{
+    max-width: 100%;
+    max-height: 100%;  
+}
+#headIMG{
+    max-width: 100%;
+    max-height: 100%;  
+}
+
+#sciManIMG{
+    max-width: 100%;
+    max-height: 100%;  
+}
 
 
 /* display CSS */
@@ -85,6 +186,7 @@ https://matthewjamestaylor.com/css-centred-menus# */
 
 .show{
     display: block;
+    
 }
 
 form{
@@ -94,6 +196,7 @@ form{
 
 
 p.lifeChance{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 2px;
     float: right;
     height: 40px;
