@@ -69,7 +69,7 @@
 const subBtn = document.querySelector("#bars")
 const inputBar = document.querySelector("#text")
 
-const chosenWord = ["panda","focus","hocus","prime","limbs","tears","clubs","weeps","kiwis","boots"]
+const chosenWord = ["panda","focus","hocus","prime","limbs","tears","clubs","weeps","kiwis","boots","GOABSOLUTELyTOHELL"]
 
 const lettersShow = document.querySelector('.display')
 
