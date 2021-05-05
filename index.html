@@ -8,54 +8,57 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>QUICK! GUESS THE PASSWORD</h1>
-    <div id="introScreen">
+    <div id='overlay'>
+        <h1 id="overlayText">ROBOTMAN</h1>
+        <span id="overlayDescription">”Professor Bapping is planning on going on a rampage in his giant robot! Player, it is up to you to guess the password before the mad scientist and his robot can go out and destroy the city!”</span>
+        <button class="playMode" id="onePMode">ONE PLAYER</button>
+        <button class="playMode" id="twoPMode">TWO PLAYERS</button>
+    </div>
+    <div id="overlayDos">
+        <form>
+            <input id="newWordText" type="text"/>
+            <input id="newWordGo" type="submit"/>
+        </form>
+    </div>
 
+
+
+    <h2>QUICKLY! GUESS THE PASSWORD</h2>
+    <!-- <div id="introScreen"> </div> -->
+    <div class="infoDisplay">
+        <span id="lifeChance">How many chances Left?</span>
+        <span id="lettersUsed"></span>
     </div>
-    <div>
-        <p class="lifeChance"></p>
-    </div>
-    <div class= "figures">
-        <div class="robotModel" id="mainRobot">
-            <div class="robot chance" id="head">
+    <div class="robot man Model" id="chanceGrid">
+        <div class="robot chance" id="head">
                 <img id="headIMG" src="imgs/robot-head-go.jpg" alt="headIMG">
-                <div class="robot chance" id="shinji"><img id="shinjiIMG" src="imgs/robot-shinji-ride-done.jpg" alt="shinjiIMG"></div>
+                <div class="robot chance" id="shinji"><img id="shinjiIMG" src="imgs/Get-In-The-Robot-Shinji-Now.jpg" alt="shinjiIMG"></div>
             </div>
-
-            <div class="robot chance" id="torso">
+        <div class="robot chance" id="torso">
                 <img id="torsoIMG" src="imgs/robot-torso-cleaned.jpg" alt="torsoIMG">
             </div>
-
-            <div class="robot chance arms" id="leftArm">
+        <div class="robot chance arms" id="leftArm">
                 <img id="leftArmIMG" src="imgs/robot-arm-resized.jpg">
             </div>
-
-            <div class="robot chance arms" id="rightArm">
+        <div class="robot chance arms" id="rightArm">
                 <img id="rightArmIMG" src="imgs/robot-arm-resized.jpg">
             </div>
-
-            <div class ="robot chance hands" id="leftHand">
+        <div class ="robot chance hands" id="leftHand">
                 <img id="leftHandIMG" src="imgs/robot-leftHand-go.jpg" alt="">
             </div>
-
-            <div class="robot chance hands" id="rightHand">
+        <div class="robot chance hands" id="rightHand">
                 <img id="rightHandIMG" src="imgs/robot-rightHand-resized-go.jpg" alt="rightHandIMG">
             </div>
-            <div class="robot chance legs" id="leftLeg">
+        <div class="robot chance legs" id="leftLeg">
                 <img id="leftLegIMG" src="imgs/robot-leg-resized.jpg" alt="leftLegIMG">
             </div>
-            <div class="robot chance legs" id="rightLeg">
+        <div class="robot chance legs" id="rightLeg">
                 <img id= "rightLegIMG" src="imgs/robot-leg-resized.jpg" alt="rightLegIMG">
             </div>
-        </div>
-        <div class="manModel" id="mainMan">
-            <div class="man chance" id="science">
-                <img id="sciManIMG" src="imgs/shinman-newStyle-go.jpg" alt="sciManIMG">
+        <div class="man chance" id="science">
+            <img id="sciManIMG" src="imgs/shinman-newStyle-go.jpg" alt="sciManIMG">
             </div>
-            <!-- <div class="man chance" id="chest"></div>
-            <div class="man chance" id="feet"></div> -->
         </div>
-    </div>
 
     <form>
         <input id="text" type="text"/>

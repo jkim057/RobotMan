@@ -29,7 +29,9 @@ https://jkim057.github.io/RobotMan/
 1. Working connection to internet.
 
 ## User Stories
-1. None at this time.
+1. As the guessing player, I want the lost chances to be clearly understandable so that I know how many chances I have left.
+1. As a student, I want to show that I can complete a project that I envisioned.
+1. As a Instructor, I want to see that the student was learning and not sleeping in class.
 <!-- Your User stories – who are your users, what do they want and why? -->
 
 ## Major Hurdles/ Unresolved Issues
@@ -38,10 +40,11 @@ https://jkim057.github.io/RobotMan/
 1. Could not get chance remaining to display after each failed guess attempt. ✅ Edit: Was an issue with  CSS formatting, has been resolved.
 1. Could not get chance figured positioned properly. ✅ Edit: Learned about grid in CSS formatting, has been resolved.
 1. Have issue with Cross-Origin Read Blocking (CORB) blocking my image sources. Found work around, but not truly satisfied with it. ✅ Edit: Just put images in folder directly 
-1. Images are not stretching out to fill out entire space properly. ✅ Edit: Jen helped my brain grow a little today by pointing out I restricted my images from making up more space by using max-width/max-height instead of regular width/height
+1. Images are not stretching out to fill out entire space properly. ✅ Edit: Jen helped my brain grow a little today by pointing out I restricted my images from making up more space by using max-width/max-height instead of regular width/height.
 1. A. Can't get the robot head to fill out space.  ✅ Edit: See above for Jen's fix.
-1. Can't get pilot head to set inside properly. ❌ EDIT: Saw what it looked like visually, decided to work around this by replacing head img w/ floating pilot face with head img with pilot inside already
-
+1. Can't get pilot head to set inside properly. ❌ EDIT: Saw what it looked like visually, decided to work around this by replacing head img w/ floating pilot face with head img with pilot inside already.
+1. Display div was only showing overall array, also was inputting values into array twice. ✅  Edit: Removed double input push and seperated input code and display code which resolved both issues
+1. Forgot how flexbox works ✅ Edit: Corrected flexbox formatting into parent element
 
 
 
@@ -49,6 +52,8 @@ https://jkim057.github.io/RobotMan/
 1. Used for intial styling: https://matthewjamestaylor.com/css-centred-menus#
 1. Visibility Issues Resolved: https://stackoverflow.com/questions/6205148/changing-visibility-using-javascript 
 1. Used for position styling: https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/
+1. Used for overlay setup: https://www.w3schools.com/howto/howto_css_overlay.asp
+1. Used for overlay comprehension: http://jsfiddle.net/UHECE/291/
 
 
 ## Future Plans
@@ -61,7 +66,7 @@ https://jkim057.github.io/RobotMan/
 ### Bronze
 1. Chances left countdown : ✅
 1. Create input so players can enter words to guess.
-1. Update chance figures with actual artwork.✅
+1. Update chance figures with actual artwork. ✅
 ### Silver
 1. Background of town.
 1. Animation or visual effect accomplaying chance figure appearance.
@@ -77,4 +82,4 @@ https://jkim057.github.io/RobotMan/
 ## Special Thanks
 1. Friends and family.
 1. The wonderful intructors and cohortmates at GA
-1. Bo and Aaron for saving my sanity for pointing out common sense solutions for my overly complicated plans.
+1. Bo, Aaron, and the homies for saving my sanity for pointing out common sense solutions for my overly complicated plans.

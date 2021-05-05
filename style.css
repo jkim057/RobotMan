@@ -1,12 +1,93 @@
-h1{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: auto 0; 
+
+/* CSS Overlay Styling (Title, Description, buttons) */
+/* used https://www.w3schools.com/howto/howto_css_overlay.asp for inital overlay setup */
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color:black;
+    background-color: rgb(179, 177, 177); /* Black background  */
+    z-index: 10; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
 }
 
-/* Chances CSS*/
-/*  used for grid information. https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
+#overlayText{
+    font-size: 200%;
+}
+#overlayDescription{
+    height: 180px;
+    width: 150px;
+}
 
-#mainRobot{
+/* CS Overlay Dos Styling + input Button */
+#overlayDos {
+    position: fixed; /* Sit on top of the page content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color:black;
+    background-color: rgb(179, 177, 177); /* Black background  */
+    z-index: 8; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+
+
+/* CS Game Screen UI (Title, Chance Left, Letters Used) */
+
+h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.infoDisplay{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    float:right;
+    right: 0;
+    position: relative;
+    width: 21vh;
+    height: 40vh;
+    padding: 1px;
+    border: 2px solid black;
+}
+span#lifeChance{
+    position: absolute;
+    top: 0;
+    padding: 5px;
+    margin: 5px;
+    height: 20vh;
+    width: 20vh;
+    /* border: 2px solid black; */
+}
+span#lettersUsed{
+    position: absolute;
+    bottom: 0;
+    margin:1px;
+    height: 25vh;
+    width: 20vh;
+    border: 2px solid black;
+
+}
+
+/* CSS Chance Figure Styling (Robots, scientist) */
+/* Used for grid information. https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/ */
+
+#chanceGrid{
     display: grid;
     grid-template-rows: 100px 100px 50px 50px 100px;
     grid-template-columns: 50px 50px 50px 50px 50px 50px ;
@@ -16,14 +97,12 @@ h1{
     grid-row: 1;
     height: 100px;
     width: 100px;
-    border: 1px solid black;
     visibility: hidden;
     position: relative;
 }
 #shinji{
     grid-column: 3;
     grid-row: 1;
-    border: 1px solid black;
     visibility: hidden;
     position: absolute;
     top: 0;
@@ -34,21 +113,18 @@ h1{
     justify-content: center;
     align-items: center;
 }
-
 #torso{
     grid-column: 3;
     grid-row: 2;
     height: 150px;
     width: 100px;
     align-items: baseline;
-    border: 1px solid black;
+
     visibility: hidden;
 }
-
 .legs{
     height: 150px;
     width: 50px;
-    border: 1px solid black;
     visibility: hidden;
 }
 #leftLeg{
@@ -59,11 +135,10 @@ h1{
     grid-column: 3;
     grid-row: 4;
 }
-
 .arms{
     height: 100px;
     width: 175px;
-    border: 1px solid black;
+    
     visibility: hidden;
 }
 #leftArm{
@@ -72,33 +147,28 @@ h1{
     width: 100%;
     height: 100%;
 }
-
 #rightArm{
     grid-column: 5;
     grid-row: 2;
     max-width: 100%;
     max-height: 100%;
 }
-
 .hands{
-    border: 1px solid black;
+    
     visibility: hidden;
 }
-
 #leftHand{
     height: 100px;
     width: 50px;
     grid-column: 2;
     grid-row: 3;
 }
-
 #rightHand{
     height: 100px;
     width: 50px;
     grid-column: 5;
     grid-row: 3;
 }
-
 #mainMan{
     display: flex;
     align-items: center;
@@ -109,21 +179,22 @@ h1{
 #science{
     height: 100px;
     width: 70px;
-    border: 1px solid black;
+    grid-column: 6;
+    grid-row: 5;
     visibility: hidden;
 }
 
 
-/* Not sure how to get images to stretch out to entire page */
-
-
-/* CS IMG Styling */
+/* CSS Chance Figure IMG Styling */
 
 #shinjiIMG{
     width: 100%;
     height: 100%;
 }
-
+#headIMG{
+    width: 100%;
+    height: 100%;  
+}
 #torsoIMG{
     width: 100%;
     height: 100%;
@@ -138,25 +209,22 @@ h1{
     width: 100%;
     height: 100%;
 }
+
 #rightArmIMG{
     width: 100%;
     height: 100%;
     transform: scaleX(-1);
 }
-
 #rightHandIMG{
     width: 100%;
     height: 100%;
 }
+
 #leftLegIMG{
     width: 100%;
     height: 100%;
 }
 #rightLegIMG{
-    width: 100%;
-    height: 100%;  
-}
-#headIMG{
     width: 100%;
     height: 100%;  
 }
@@ -167,7 +235,7 @@ h1{
 }
 
 
-/* display CSS */
+/* CS Correct Letter Display  */
 /* Used some styling and advice from 
 https://matthewjamestaylor.com/css-centred-menus# */
 
@@ -187,23 +255,12 @@ https://matthewjamestaylor.com/css-centred-menus# */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     visibility: hidden;
 }
-
 .show{
     display: block;
     
 }
-
 form{
     margin-left: 50%;
     padding: 5px;
-}
-
-
-p.lifeChance{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 2px;
-    float: right;
-    height: 40px;
-    width: 100px;
-    border: 2px solid black;
+    text-align: right;
 }

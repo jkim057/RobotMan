@@ -44,6 +44,9 @@
 // reducing the number of chances for the sake of my sanity
 // 2 arms for 1 chance, 2 legs for 1 chance, entire man for 1 chance.
 
+// Letter usage display notes:
+// each inputText.value is getting added to the array TWICE
+// the display is not showing the elements in the array, it just shows the number of elements in the array.
 
 //////////////
 //// start screen reasoning w/ 1 vs 2 player setup ///
@@ -60,16 +63,60 @@
     // then game starts
     // prioritized entered word should then get broken down into array of single letter strings, and the game be the same from there.
 
+
+//// start screen reasoning ///
+
+
+// overlay start with display block
+
+// with start screen, set up so that player can choose 1player or 2player
+// picking 1 player, page auto generates a word to guess
+    // have those functions linked to the 1st player button
+            // auto grab word from pool & setup as array SET TO 1 PLAYER BUTTON CLICK
+// pick 2 players, prompt shows up asking for word
+    // page doesn't load yet?
+    // prompted word gets prioritized over general pool
+    // prompted word gets spilt into single letter arrays
+    // page THEN sets the word to guess
+    // then game starts
+    // prioritized entered word should then get broken down into array of single letter strings, and the game be the same from there.
+
+////////// START SCREEN / 1P 2P functionality ///////////
+ // HTML
+    // 1P VS 2P button mode
+    // <button id="onePMode"></button> ✅
+    // <button id="twoPMode"></button> ✅
+
+    // New word input & button
+    // <form>
+    //      <input id="newWordText" type="text"/>
+    //      <input id="newWordGo" type="submit"/>
+    // </form>
+
+    // JSS
+    // Variables
+
+    // const newWordBTN = document.querySelector("#newWordGo")
+    // const newWordInput = document.querySelector("#newWordText")
+
+    // can use prompts to set user input to a variable quickly
+    // const userInput = prompt("What is the secret password?")
 ////////////////////
 
 
-
+///////////////////////////
 ////////// Variables ////////// 
 
-const subBtn = document.querySelector("#bars")
-const inputBar = document.querySelector("#text")
+const overlayScreen = document.querySelector("#overlay")
 
-const chosenWord = ["panda","focus","hocus","prime","limbs","tears","clubs","weeps","kiwis","boots","GOABSOLUTELyTOHELL"]
+const subBtn = document.querySelector("#bars")
+const inputText = document.querySelector("#text")
+
+const newWordBTN = document.querySelector("#newWordGo")
+const newWordInput = document.querySelector("#newWordText")
+
+
+const chosenWord = ["panda","focus","hocus","prime","limbs","tears","clubs","weeps","kiwis","boots","wizard","league","buttons","lobster"]
 
 const lettersShow = document.querySelector('.display')
 
@@ -86,86 +133,88 @@ const sciWhole = document.querySelector(`#science`)
 
 let chancesLeft = 6
 
-const chanceDisplay = document.querySelector('.lifeChance')
+const chanceDisplay = document.querySelector('#lifeChance')
+const spentLetters = document.querySelector('#lettersUsed')
+
+let guessedWords = []
+
+const onePlayBTN = document.querySelector("#onePMode")
+const twoPlayBTN = document.querySelector("#twoPMode")
 
 
-
-
-
-
-
-
+/////////////////////////////////
 //////////  Functions ////////// 
 
-
+// indexRandom picks random index element item in preset random word array.
+// stringBreak breaks up any entered strings into arrays of single letter strings.
 const indexRandom = () => {return Math.floor(Math.random() * chosenWord.length)}
 const stringBreak = (str) => {return str.split("") }
 
 wordArray = stringBreak(chosenWord[Math.floor(Math.random() * chosenWord.length)])
+wordArrayChosen = stringBreak(userInput)
 
-const setUpWords = () => {
-    for (let i = 0; i < wordArray.length; i++) {
+// Takes the var set to a word array string and puts them all in place in the letter display
+const setUpWords = (array) => {
+    for (let i = 0; i < array.length; i++) {
         const lettersSpan = document.createElement("span")
         const letterStyle = document.createElement("div")
         lettersSpan.classList.add('trueLetter')
         lettersSpan.id = (`letterPosition${i}`)
         letterStyle.classList.add('bottomStyle')
-        lettersSpan.innerText = wordArray[i]
+        lettersSpan.innerText = array[i]
         lettersShow.appendChild(letterStyle)
         letterStyle.appendChild(lettersSpan)  
     }
 }
-// need to get setUpWords to run automatically 
-setUpWords()
 
 
-// Resolved letter visibility issues this thread https://stackoverflow.com/questions/6205148/changing-visibility-using-javascript 
-
+// Successful Guess
 const letterFind = function(){
     for (let i = 0; i < wordArray.length; i++) {
-        if (wordArray[i].includes(inputBar.value)){
+        if (wordArray[i].includes(inputText.value)){
             let reveal = document.querySelector(`#letterPosition${i}`)
             reveal.style.visibility = "visible";
 }}}
 
+
+
+// Chances Left
 const chanceTally = function(){
     if(chancesLeft > 0){
         chanceDisplay.innerText = `${chancesLeft} chances left!`
     }else if(chancesLeft <= 0){
-        chanceDisplay.innerText = `You lost! City is destroyed.`
+        chanceDisplay.innerText = `You lost! Game Over!`
     }
 }
-
+// Failed Guess 
 const letterMiss = function(){
-    // let imageReveal = document.querySelector(".chance");
-    // console.log(imageReveal)
-    // head torso arm leg man pilot
-    if(chancesLeft == 6){
+    if(chancesLeft === 6){
         robotLegsLT.style.visibility = "visible"
         robotLegsRI.style.visibility = "visible"
         chanceTally()
         return chancesLeft--
-    }else if(chancesLeft == 5) {
+    }else if(chancesLeft === 5) {
         robotTorso.style.visibility = "visible"
         chanceTally()
         return chancesLeft--
-    }else if(chancesLeft == 4) {
+    }else if(chancesLeft === 4) {
         robotArmLT.style.visibility = "visible"
         robotArmRI.style.visibility = "visible"
         robotHandLT.style.visibility = "visible"
         robotHandRI.style.visibility = "visible"
         chanceTally()
         return chancesLeft--
-    }else if(chancesLeft == 3) {
+    }else if(chancesLeft === 3) {
         robotHead.style.visibility = "visible"
         chanceTally()
         return chancesLeft--
-    }else if(chancesLeft == 2) {
+    }else if(chancesLeft === 2) {
         sciWhole.style.visibility = "visible"
         chanceTally()
         return chancesLeft--
-    }else if(chancesLeft == 1) {
+    }else if(chancesLeft === 1) {
         sciWhole.style.visibility = "hidden"
+        robotHead.style.visibility = "hidden"
         robotShinji.style.visibility = "visible"
         chanceTally()
         return chancesLeft--
@@ -173,45 +222,68 @@ const letterMiss = function(){
         chanceTally()
     }
 }
-//// start screen reasoning ///
 
-// with start screen, set up so that player can choose 1player or 2player
-// picking 1 player, page auto generates a word to guess
-    // have those functions linked to the 1st player button
-            // auto grab word from pool & setup as array SET TO 1 PLAYER BUTTON CLICK
-// pick 2 players, prompt shows up asking for word
-    // page doesn't load yet?
-    // prompted word gets prioritized over general pool
-    // prompted word gets spilt into single letter arrays
-    // page THEN sets the word to guess
-    // then game starts
-    // prioritized entered word should then get broken down into array of single letter strings, and the game be the same from there.
-
-
-// const startScreen = function(){
-
-// }
+// Letter display //
+const spentLetterBox = function(){
+    guessedWords.push(inputText.value)
+    spentLetters.innerText = guessedWords
+    console.log(inputText.value)
+    console.log(spentLetters)
+}
 
 
 
 
 
 
-
-
-
+///////////////////////////////////
 //////////  Event Listener ////////// 
+
+
+    // const newWordBTN = document.querySelector("#newWordGo")
+    // const newWordInput = document.querySelector("#newWordText")
+
+    // can use prompts to set user input to a variable quickly
+    // const userInput = prompt("What is the secret password?")
+
+    //// event Listener ////
+     //link start wordArray & setUpWords - this means I need to stop the auto word array and setUpWords function
+onePlayBTN.addEventListener('click', (event) =>{
+        event.preventDefault()
+        overlayScreen.style.display = "none"
+        console.log('hi')
+        // setUpWords(wordArray)
+})
+    
+twoPlayBTN.addEventListener('click', (event) =>{
+    event.preventDefault()
+        overlayScreen.style.display = "none"
+        // setUpWords(wordArrayChosen)
+            // wait for input value of word entered
+            // enter input value into string break function
+            // input value array is now individual strings that are inputted in arrays
+})
+    
+
 
 subBtn.addEventListener("click", (event) => {
     event.preventDefault()
-        if(wordArray.includes(inputBar.value)){
+        if(wordArray.includes(inputText.value)){
             letterFind()
+            spentLetterBox()
         }else{
             letterMiss()
+            spentLetterBox()
             console.log("you are wrong son")
             console.log(wordArray)
         }
 });
+
+
+
+
+
+
 
 
 
