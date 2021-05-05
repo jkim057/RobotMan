@@ -68,6 +68,7 @@ https://jkim057.github.io/RobotMan/
 1. End screen animation of town being destroyed.
 1. Time based scoring.
 1. High score tracker.
+2. Retroactive refracturing for mobile mode.
 
 
 
