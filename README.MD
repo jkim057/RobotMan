@@ -5,7 +5,8 @@
 1. A guessing game where users have to guess a word one letter at a time. Users get 10 chances, each incorrect letter revealing a robot piece or a figure of a man.
 
 ## View the deployed version here!
-https://jkim057.github.io/RobotMan/
+![Robotman-basic-display](https://user-images.githubusercontent.com/81879149/117162022-6bc68400-ad90-11eb-9137-f5b9cc5c6a32.png)
+
 
 ## Wireframes
 <img src="url/imgs/Robotman-basic-display.jpeg">
