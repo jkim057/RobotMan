@@ -250,7 +250,6 @@ const spentLetterBox = function(){
 onePlayBTN.addEventListener('click', (event) =>{
         event.preventDefault()
         overlayScreen.style.display = "none"
-        console.log('hi')
         setUpWords(wordArray)
 })
     
@@ -274,8 +273,8 @@ subBtn.addEventListener("click", (event) => {
         }else{
             letterMiss()
             spentLetterBox()
-            console.log("you are wrong son")
-            console.log(wordArray)
+            // console.log("you are wrong")
+            // console.log(wordArray)
         }
 });
 
