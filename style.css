@@ -1,3 +1,6 @@
+/* body{
+    background-image: url(imgs/dumpster-background.jpg);
+} */
 
 /* CSS Overlay Styling (Title, Description, buttons) */
 /* used https://www.w3schools.com/howto/howto_css_overlay.asp for inital overlay setup */
@@ -28,23 +31,7 @@
 }
 
 /* CS Overlay Dos Styling + input Button */
-#overlayDos {
-    position: fixed; /* Sit on top of the page content */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    color:black;
-    background-color: rgb(179, 177, 177); /* Black background  */
-    z-index: 8; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
-}
+
 
 
 
@@ -56,6 +43,7 @@ h2{
 }
 
 .infoDisplay{
+    /* background-color: white; */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     float:right;
     right: 0;
@@ -65,7 +53,7 @@ h2{
     padding: 1px;
     border: 2px solid black;
 }
-span#lifeChance{
+#lifeChance{
     position: absolute;
     top: 0;
     padding: 5px;
@@ -74,7 +62,7 @@ span#lifeChance{
     width: 20vh;
     /* border: 2px solid black; */
 }
-span#lettersUsed{
+#lettersUsed{
     position: absolute;
     bottom: 0;
     margin:1px;
@@ -130,6 +118,7 @@ span#lettersUsed{
 #leftLeg{
     grid-column: 4;
     grid-row: 4;
+    
 }
 #rightLeg{
     grid-column: 3;
@@ -239,12 +228,13 @@ span#lettersUsed{
 /* Used some styling and advice from 
 https://matthewjamestaylor.com/css-centred-menus# */
 
-.display{
+#letterShownDisplay{
     display: flex;
     justify-content: space-evenly;
 
 }
 .bottomStyle{
+    /* background-color: white; */
     flex-direction: row;
     margin: 0 0 0 3px; 
     padding: 3px 5px;

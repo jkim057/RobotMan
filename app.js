@@ -112,13 +112,13 @@ const overlayScreen = document.querySelector("#overlay")
 const subBtn = document.querySelector("#bars")
 const inputText = document.querySelector("#text")
 
-const newWordBTN = document.querySelector("#newWordGo")
-const newWordInput = document.querySelector("#newWordText")
+// const newWordBTN = document.querySelector("#newWordGo")
+// const newWordInput = document.querySelector("#newWordText")
 
 
 const chosenWord = ["panda","focus","hocus","prime","limbs","tears","clubs","weeps","kiwis","boots","wizard","league","buttons","lobster"]
 
-const lettersShow = document.querySelector('.display')
+const lettersShow = document.querySelector('#letterShownDisplay')
 
 const robotHead = document.querySelector(`#head`)
 const robotShinji = document.querySelector(`#shinji`)
@@ -141,6 +141,7 @@ let guessedWords = []
 const onePlayBTN = document.querySelector("#onePMode")
 const twoPlayBTN = document.querySelector("#twoPMode")
 
+let curArray = []
 
 /////////////////////////////////
 //////////  Functions ////////// 
@@ -151,17 +152,17 @@ const indexRandom = () => {return Math.floor(Math.random() * chosenWord.length)}
 const stringBreak = (str) => {return str.split("") }
 
 wordArray = stringBreak(chosenWord[Math.floor(Math.random() * chosenWord.length)])
-wordArrayChosen = stringBreak(userInput)
+// wordArrayChosen = stringBreak(userInput.value)
 
 // Takes the var set to a word array string and puts them all in place in the letter display
-const setUpWords = (array) => {
-    for (let i = 0; i < array.length; i++) {
+const setUpWords = (wordArray) => {
+    for (let i = 0; i < wordArray.length; i++) {
         const lettersSpan = document.createElement("span")
         const letterStyle = document.createElement("div")
         lettersSpan.classList.add('trueLetter')
         lettersSpan.id = (`letterPosition${i}`)
         letterStyle.classList.add('bottomStyle')
-        lettersSpan.innerText = array[i]
+        lettersSpan.innerText = wordArray[i]
         lettersShow.appendChild(letterStyle)
         letterStyle.appendChild(lettersSpan)  
     }
@@ -227,8 +228,6 @@ const letterMiss = function(){
 const spentLetterBox = function(){
     guessedWords.push(inputText.value)
     spentLetters.innerText = guessedWords
-    console.log(inputText.value)
-    console.log(spentLetters)
 }
 
 
@@ -252,17 +251,18 @@ onePlayBTN.addEventListener('click', (event) =>{
         event.preventDefault()
         overlayScreen.style.display = "none"
         console.log('hi')
-        // setUpWords(wordArray)
+        setUpWords(wordArray)
 })
     
-twoPlayBTN.addEventListener('click', (event) =>{
-    event.preventDefault()
-        overlayScreen.style.display = "none"
-        // setUpWords(wordArrayChosen)
-            // wait for input value of word entered
-            // enter input value into string break function
-            // input value array is now individual strings that are inputted in arrays
-})
+// twoPlayBTN.addEventListener('click', (event) =>{
+//     event.preventDefault()
+//         overlayScreen.style.display = "none"
+//         setUpWords(wordArrayChosen)
+//         })
+//             // wait for input value of word entered
+//             // enter input value into string break function
+//             // input value array is now individual strings that are inputted in arrays
+// })
     
 
 
