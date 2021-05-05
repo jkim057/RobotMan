@@ -8,8 +8,8 @@
 https://jkim057.github.io/RobotMan/
 
 ## Wireframes
-![Robotman-basic-display](https://user-images.githubusercontent.com/81879149/117162022-6bc68400-ad90-11eb-9137-f5b9cc5c6a32.png)
 
+![Robotman-basic-display](https://user-images.githubusercontent.com/81879149/117162022-6bc68400-ad90-11eb-9137-f5b9cc5c6a32.png)
 
 
 ## Technology Used
