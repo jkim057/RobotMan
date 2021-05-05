@@ -74,4 +74,4 @@ https://jkim057.github.io/RobotMan/
 ## Special Thanks
 1. Friends and family.
 1. The wonderful intructors and cohortmates at GA
-1. Bo, Aaron, and the homies for saving my sanity for pointing out common sense solutions for my overly complicated plans.
+1. Bo, Aaron, and those willing to help me debug and saving my sanity by pointing out simpler solutions for complicated plans.
