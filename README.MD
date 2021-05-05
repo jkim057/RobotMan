@@ -8,7 +8,7 @@
 https://jkim057.github.io/RobotMan/
 
 ## Wireframes
-<img src="imgs/Robotman-basic-display.jpeg">
+<img src="url/imgs/Robotman-basic-display.jpeg">
 
 
 ## Technology Used
